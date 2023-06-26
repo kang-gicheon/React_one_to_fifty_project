@@ -1,0 +1,24 @@
+** 추가된 항목
+(state 선언)
+
+1. numbers - 1부터 25까지의 숫자 배열
+2. gameFlag - 게임이 진행중인지 여부(true / false)
+3. current - 게임 진행 중 특정시점에서 클릭해야 할 숫자
+(처음에는 1, 누를때마다 2,3,4,.....,50까지 증가)
+4. timeElapsed - 경과 시간
+
+OneToFifity.js -> 1부터 25까지의 숫자를 가진 배열을 생성, numbers의 초기값으로 전달
+(numbers는 Board로 전달)
+
+Board.js -> map 메소드를 사용, 전달받은 numbers를 25개의 cell로 반환
+(JSX 내부에서(return 뒤의 코드) 반복문으로 컴포넌트를 렌더링 할 때에는 각 컴포넌트마다 
+고유한 key값을 전달. numbers는 배열이므로 각 요소가 가지고 있는 index값을
+ key값으로)
+
+Cell.js -> 스타일 작업
+
+   border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
