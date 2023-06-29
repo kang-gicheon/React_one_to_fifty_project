@@ -1,0 +1,31 @@
+- 숫자계산, 배열 다루기
+
+--------------------------------
+
+** 구현 기능
+
+1. handleClick 함수 추가
+
+one_to_fifty -> board -> cell
+매개변수로 받는 숫자를 Cell 컴포넌트까지 전달됐는지 테스트 후
+함수 내부 구현
+
+-> 클릭시 num, current 같은지 판정 실시
+
+- 시작 직후에는 current를 1로 고정, 1이 아닌 다른 Cell을 클릭시 코드 실행 X
+
+- num이 current와 같을시 50인지 확인, 50일시 게임이 끝
+- 50이 아니라면 해당 num의 index의 값을 구함, 해당 num을 숫자(26~50)으로 치환
+num26  이상일시 먼저 0으로 처리(이후 0 출력이 아닌 비어있게 null로 처리)
+function Cell({ num, handleClick }) {
+  return (
+    <Container onClick={() => handleClick(num)}>
+      {num !== 0 ? num : null}
+    </Container>
+  );
+}
+
+2. starGame, endGame 함수 추가
+
+starGame이 실행될시 huffleArray() 함수에 의해 numbers가 섞이면서 게임이 시작
+(OneToFifty 컴포넌트 아래에 shuffleArray() 함수를 추가)
